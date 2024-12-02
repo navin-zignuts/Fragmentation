@@ -11,30 +11,9 @@ buildscript {
     }
 }
 
-subprojects {
-
-    if(name != "demo"){
-        apply plugin: 'maven-publish'
-
-        afterEvaluate {
-            publishing {
-
-                publications {
-                    release(MavenPublication) {
-
-                        groupId project.group
-                        artifactId project.name
-                        version project.version
-                    }
-                }
-            }
-        }
-    }
-}
-
 allprojects {
-    version = "1.8"
-    group = 'com.github.navin-zignuts'
+    version = "1.9"
+//    group = 'com.github.navin-zignuts'
 
     repositories {
         google()
@@ -52,4 +31,11 @@ ext {
     targetSdkVersion = compileSdkVersion
 
     appCompatVersion = "1.1.0-alpha01"
+}
+
+subprojects {
+
+    if(name != "demo"){
+        apply plugin: 'maven-publish'
+    }
 }

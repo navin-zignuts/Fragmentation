@@ -17,8 +17,9 @@ android {
     }
     publishing {
         multipleVariants {
-            allVariants()
-            withJavadocJar()
+            it.allVariants()
+            it.withJavadocJar()
+            it.withSourcesJar()
         }
     }
 }
@@ -28,3 +29,18 @@ dependencies {
     api project(':fragmentation_core')
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.default
+
+                groupId project.group
+                artifactId project.name
+                version project.version
+
+                println(components*.name)
+            }
+        }
+    }
+}

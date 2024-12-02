@@ -9,14 +9,40 @@ android {
 
         consumerProguardFiles 'proguard-rules.pro'
 
+        aarMetadata{
+
+        }
     }
 
     publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            withJavadocJar()
+        multipleVariants {
+            it.allVariants()
+            it.withJavadocJar()
+            it.withSourcesJar()
         }
     }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.default
+
+                groupId project.group
+                artifactId project.name
+                version project.version
+
+                println(components*.name)
+            }
+        }
+    }
+}
+
+androidComponents {
+    onVariants(selector().all(), {
+        println "aaa $it.name"
+    })
 }
 
 dependencies {
