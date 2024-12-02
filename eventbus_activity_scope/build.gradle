@@ -8,6 +8,14 @@ android {
         targetSdkVersion rootProject.targetSdkVersion
 
         consumerProguardFiles 'proguard-rules.pro'
+
+    }
+
+    publishing {
+        multipleVariants {
+            allVariants()
+            withJavadocJar()
+        }
     }
 }
 
