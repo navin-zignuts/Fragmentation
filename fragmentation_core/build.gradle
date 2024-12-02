@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'bintray-release'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -19,6 +20,20 @@ android {
 
 dependencies {
     compileOnly "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication){
+                from components.release
+
+                groupId = 'com.github.navin-zignuts'
+                artifactId = 'fragment_core'
+                version = '1.0'
+            }
+        }
+    }
 }
 
 //publish {
