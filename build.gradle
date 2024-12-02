@@ -11,7 +11,26 @@ buildscript {
     }
 }
 
+subprojects {
+    apply plugin: 'maven-publish'
+
+    afterEvaluate {
+        publishing {
+            publications {
+                maven(MavenPublication) {
+                    groupId project.group
+                    artifactId project.name
+                    version project.version
+                }
+            }
+        }
+    }
+}
+
 allprojects {
+    version = "1.6"
+    group = 'com.github.navin-zignuts'
+
     repositories {
         google()
         jcenter()
