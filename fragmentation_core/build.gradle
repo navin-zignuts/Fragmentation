@@ -24,8 +24,8 @@ android {
         }
     }
     publishing {
-        multipleVariants {
-            it.allVariants()
+        singleVariant('release') {
+            println(it.variantName)
             it.withJavadocJar()
             it.withSourcesJar()
         }
@@ -40,13 +40,12 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.default
+                from components.release
 
                 groupId project.group
                 artifactId project.name
                 version project.version
 
-                println(components*.name)
             }
         }
     }
