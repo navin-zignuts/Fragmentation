@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -12,4 +13,18 @@ android {
 dependencies {
     compileOnly "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     api project(':fragmentation_core')
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication){
+                from components.release
+
+                groupId = 'com.github.navin-zignuts'
+                artifactId = 'fragment'
+                version = '1.0'
+            }
+        }
+    }
 }
