@@ -23,10 +23,10 @@ android {
 
     signingConfigs {
         releaseConfig {
-            storeFile file("./fragmentation.jks")
-            storePassword System.getenv("KEYSTORE_PASS")
-            keyAlias System.getenv("ALIAS_NAME")
-            keyPassword System.getenv("ALIAS_PASS")
+            storeFile file("./dest.jks")
+            storePassword 'Zignuts@123'
+            keyAlias 'zig'
+            keyPassword 'Zignuts@123'
         }
     }
 
