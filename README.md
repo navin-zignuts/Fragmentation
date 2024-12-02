@@ -1,6 +1,6 @@
+[![](https://jitpack.io/v/navin-zignuts/Fragmentation.svg)](https://jitpack.io/#navin-zignuts/Fragmentation)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Fragmentation-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5937)
 [![Build Status](https://travis-ci.org/YoKeyword/Fragmentation.svg?branch=master)](https://travis-ci.org/YoKeyword/Fragmentation)
-[![Download](https://api.bintray.com/packages/yokeyword/maven/Fragmentation/images/download.svg) ](https://bintray.com/yokeyword/maven/Fragmentation/_latestVersion)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED
