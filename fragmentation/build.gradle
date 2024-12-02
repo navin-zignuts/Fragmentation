@@ -22,7 +22,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.github.navin-zignuts'
-                artifactId = 'fragment'
+                artifactId = 'fragmentation'
                 version = '1.0'
             }
         }
