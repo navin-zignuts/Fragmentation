@@ -26,7 +26,6 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication){
-                from components.release
 
                 groupId = 'com.github.navin-zignuts'
                 artifactId = 'fragment_core'

@@ -21,8 +21,6 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication){
-                from components.release
-
                 groupId = 'com.github.navin-zignuts'
                 artifactId = 'fragmentation_swipeback'
                 version = '1.0'
